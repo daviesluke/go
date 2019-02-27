@@ -45,7 +45,7 @@ func copyLog(oldLog, newLog string) {
 
 	defer old.Close()
 
-	new, err := os.OpenFile(newLog, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0600)
+	new, err := os.OpenFile(newLog, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0640)
 	if err != nil {
 		Errorf("Unable to open log file %s for writing", newLog)
 	}
@@ -305,9 +305,9 @@ func Initialize(logDir string, logFileName string, logConfigFileName string) {
 	//
 	// Try opening the file
 	//
-	tracef2("About to open file %s (modes append, write only, create, perm=0600) ...",logFileName)
+	tracef2("About to open file %s (modes append, write only, create, perm=0640) ...",logFileName)
 
-	LogFile, err := os.OpenFile(logFileName, os.O_WRONLY|os.O_CREATE|os.O_EXCL, 0600)
+	LogFile, err := os.OpenFile(logFileName, os.O_WRONLY|os.O_CREATE|os.O_EXCL, 0640)
 
 	if err != nil {
 		Errorf("Unable to open logfile %s", logFileName)
