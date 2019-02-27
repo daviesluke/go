@@ -1,6 +1,9 @@
 /* 
 Version History
 
+2019-02-27  Version 2.1.3 Luke
+            Minor change to allow log files to be readable by the group
+
 2018-02-11  Version 2.1.2 Luke
 			Minor change to correct log data format in history file
 			Fixed bug to clean out temporary command files from rman command directory
@@ -34,7 +37,7 @@ import "github.com/daviesluke/run_rman/oracle/rman"
 // Local Variables
 
 const (
-	version string = "V2.1.2"
+	version string = "V2.1.3"
 )
 
 func main() {
